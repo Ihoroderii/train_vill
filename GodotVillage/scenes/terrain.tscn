@@ -1,0 +1,222 @@
+[gd_scene load_steps=23 format=3]
+
+[sub_resource type="FastNoiseLite" id="GrassNoise"]
+frequency = 0.016
+fractal_octaves = 3
+[sub_resource type="Gradient" id="GrassColors"]
+colors = PackedColorArray(0.24, 0.31, 0.15, 1, 0.43, 0.49, 0.24, 1)
+[sub_resource type="NoiseTexture2D" id="GrassTexture"]
+width = 512
+height = 512
+seamless = true
+noise = SubResource("GrassNoise")
+color_ramp = SubResource("GrassColors")
+[sub_resource type="StandardMaterial3D" id="Grass"]
+albedo_color = Color(0.85, 0.87, 0.8, 1)
+albedo_texture = SubResource("GrassTexture")
+uv1_scale = Vector3(1, 1, 1)
+roughness = 1.0
+[sub_resource type="StandardMaterial3D" id="Path"]
+albedo_color = Color(0.57, 0.49, 0.33, 1)
+roughness = 1.0
+[sub_resource type="StandardMaterial3D" id="Ballast"]
+albedo_color = Color(0.40, 0.39, 0.31, 1)
+roughness = 1.0
+[sub_resource type="StandardMaterial3D" id="Water"]
+albedo_color = Color(0.18, 0.49, 0.53, 1)
+metallic = 0.25
+roughness = 0.26
+[sub_resource type="StandardMaterial3D" id="Foam"]
+albedo_color = Color(0.69, 0.85, 0.79, 1)
+roughness = 0.5
+[sub_resource type="StandardMaterial3D" id="Hill"]
+albedo_color = Color(0.35, 0.44, 0.23, 1)
+roughness = 1.0
+[sub_resource type="StandardMaterial3D" id="Mountain"]
+albedo_color = Color(0.36, 0.47, 0.46, 1)
+roughness = 1.0
+[sub_resource type="StandardMaterial3D" id="FarMountain"]
+albedo_color = Color(0.46, 0.57, 0.58, 1)
+roughness = 1.0
+[sub_resource type="BoxMesh" id="UnitBox"]
+size = Vector3(1, 1, 1)
+[sub_resource type="BoxShape3D" id="FrontGround"]
+size = Vector3(56, 2, 18)
+[sub_resource type="BoxShape3D" id="EastGround"]
+size = Vector3(34, 2, 30)
+[sub_resource type="BoxShape3D" id="WestGround"]
+size = Vector3(16, 2, 30)
+[sub_resource type="SphereMesh" id="HillMesh"]
+material = SubResource("Hill")
+radius = 1.0
+height = 2.0
+radial_segments = 12
+rings = 6
+[sub_resource type="CylinderMesh" id="MountainMesh"]
+material = SubResource("Mountain")
+top_radius = 0.0
+bottom_radius = 1.0
+height = 2.0
+radial_segments = 7
+[sub_resource type="BoxShape3D" id="EndBoundary"]
+size = Vector3(1, 10, 50)
+[sub_resource type="BoxShape3D" id="SideBoundary"]
+size = Vector3(60, 10, 1)
+[sub_resource type="BoxShape3D" id="RiverBed"]
+size = Vector3(6, 0.4, 30)
+[sub_resource type="BoxShape3D" id="ShoreStep"]
+size = Vector3(6, 0.5, 1.2)
+[sub_resource type="BoxShape3D" id="ShoreStep2"]
+size = Vector3(6, 0.5, 1.2)
+
+[node name="Terrain" type="Node3D"]
+
+[node name="Meadow" type="StaticBody3D" parent="."]
+[node name="Ground" type="MeshInstance3D" parent="Meadow"]
+position = Vector3(0, -1, 5)
+scale = Vector3(56, 2, 18)
+mesh = SubResource("UnitBox")
+material_override = SubResource("Grass")
+[node name="Collision" type="CollisionShape3D" parent="Meadow"]
+position = Vector3(0, -1, 5)
+shape = SubResource("FrontGround")
+
+[node name="EastBank" type="StaticBody3D" parent="."]
+[node name="Ground" type="MeshInstance3D" parent="EastBank"]
+position = Vector3(11, -1, -19)
+scale = Vector3(34, 2, 30)
+mesh = SubResource("UnitBox")
+material_override = SubResource("Grass")
+[node name="Collision" type="CollisionShape3D" parent="EastBank"]
+position = Vector3(11, -1, -19)
+shape = SubResource("EastGround")
+
+[node name="WestBank" type="StaticBody3D" parent="."]
+[node name="Ground" type="MeshInstance3D" parent="WestBank"]
+position = Vector3(-20, -1, -19)
+scale = Vector3(16, 2, 30)
+mesh = SubResource("UnitBox")
+material_override = SubResource("Grass")
+[node name="Collision" type="CollisionShape3D" parent="WestBank"]
+position = Vector3(-20, -1, -19)
+shape = SubResource("WestGround")
+
+[node name="TrackBallast" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.015, 0)
+scale = Vector3(52, 0.05, 2.5)
+mesh = SubResource("UnitBox")
+material_override = SubResource("Ballast")
+[node name="WalkingPath" type="MeshInstance3D" parent="."]
+position = Vector3(1, 0.012, 3.3)
+scale = Vector3(40, 0.025, 2.2)
+mesh = SubResource("UnitBox")
+material_override = SubResource("Path")
+[node name="StationApproach" type="MeshInstance3D" parent="."]
+position = Vector3(12, 0.014, -0.5)
+scale = Vector3(2.6, 0.03, 10)
+mesh = SubResource("UnitBox")
+material_override = SubResource("Path")
+[node name="VillageLane" type="MeshInstance3D" parent="."]
+position = Vector3(3, 0.014, -11.6)
+scale = Vector3(18, 0.03, 1.6)
+mesh = SubResource("UnitBox")
+material_override = SubResource("Path")
+[node name="ConnectingLane" type="MeshInstance3D" parent="."]
+position = Vector3(11.7, 0.014, -8)
+scale = Vector3(1.8, 0.03, 8)
+mesh = SubResource("UnitBox")
+material_override = SubResource("Path")
+
+[node name="River" type="StaticBody3D" parent="."]
+[node name="Water" type="MeshInstance3D" parent="River"]
+position = Vector3(-9, -1.42, -19)
+scale = Vector3(6, 0.15, 30)
+mesh = SubResource("UnitBox")
+material_override = SubResource("Water")
+[node name="Bed" type="CollisionShape3D" parent="River"]
+position = Vector3(-9, -1.7, -19)
+shape = SubResource("RiverBed")
+[node name="ShallowExit01" type="CollisionShape3D" parent="River"]
+position = Vector3(-9, -1.2, -5.8)
+shape = SubResource("ShoreStep")
+[node name="ShallowExit02" type="CollisionShape3D" parent="River"]
+position = Vector3(-9, -0.7, -4.8)
+shape = SubResource("ShoreStep2")
+[node name="ShallowStones01" type="MeshInstance3D" parent="River"]
+position = Vector3(-9, -1.2, -5.8)
+scale = Vector3(6, 0.5, 1.2)
+mesh = SubResource("UnitBox")
+material_override = SubResource("Ballast")
+[node name="ShallowStones02" type="MeshInstance3D" parent="River"]
+position = Vector3(-9, -0.7, -4.8)
+scale = Vector3(6, 0.5, 1.2)
+mesh = SubResource("UnitBox")
+material_override = SubResource("Ballast")
+[node name="Ripple01" type="MeshInstance3D" parent="River"]
+position = Vector3(-9.7, -1.335, -7)
+rotation = Vector3(0, -0.12, 0)
+scale = Vector3(1.4, 0.012, 0.05)
+mesh = SubResource("UnitBox")
+material_override = SubResource("Foam")
+[node name="Ripple02" type="MeshInstance3D" parent="River"]
+position = Vector3(-8.4, -1.335, -9)
+rotation = Vector3(0, 0.15, 0)
+scale = Vector3(1.7, 0.012, 0.04)
+mesh = SubResource("UnitBox")
+material_override = SubResource("Foam")
+[node name="Ripple03" type="MeshInstance3D" parent="River"]
+position = Vector3(-9, -1.335, -14.2)
+scale = Vector3(2.2, 0.012, 0.05)
+mesh = SubResource("UnitBox")
+material_override = SubResource("Foam")
+[node name="Ripple04" type="MeshInstance3D" parent="River"]
+position = Vector3(-8.3, -1.335, -16)
+scale = Vector3(1.3, 0.012, 0.035)
+mesh = SubResource("UnitBox")
+material_override = SubResource("Foam")
+
+[node name="Hills" type="Node3D" parent="."]
+[node name="WestHill" type="MeshInstance3D" parent="Hills"]
+position = Vector3(-22, -0.8, -18)
+scale = Vector3(7, 3.3, 11)
+mesh = SubResource("HillMesh")
+[node name="EastHill" type="MeshInstance3D" parent="Hills"]
+position = Vector3(20, -0.9, -19)
+scale = Vector3(8, 4, 9)
+mesh = SubResource("HillMesh")
+[node name="FarHill" type="MeshInstance3D" parent="Hills"]
+position = Vector3(1, -0.2, -28)
+scale = Vector3(11, 4, 8)
+mesh = SubResource("HillMesh")
+[node name="Mountain01" type="MeshInstance3D" parent="Hills"]
+position = Vector3(-26, 3, -38)
+scale = Vector3(12, 10, 9)
+mesh = SubResource("MountainMesh")
+[node name="Mountain02" type="MeshInstance3D" parent="Hills"]
+position = Vector3(-10, 4, -42)
+scale = Vector3(11, 14, 10)
+mesh = SubResource("MountainMesh")
+material_override = SubResource("FarMountain")
+[node name="Mountain03" type="MeshInstance3D" parent="Hills"]
+position = Vector3(7, 3, -40)
+scale = Vector3(14, 11, 10)
+mesh = SubResource("MountainMesh")
+[node name="Mountain04" type="MeshInstance3D" parent="Hills"]
+position = Vector3(24, 4, -40)
+scale = Vector3(13, 15, 10)
+mesh = SubResource("MountainMesh")
+material_override = SubResource("FarMountain")
+
+[node name="Boundaries" type="StaticBody3D" parent="."]
+[node name="West" type="CollisionShape3D" parent="Boundaries"]
+position = Vector3(-26, 3, -10)
+shape = SubResource("EndBoundary")
+[node name="East" type="CollisionShape3D" parent="Boundaries"]
+position = Vector3(26, 3, -10)
+shape = SubResource("EndBoundary")
+[node name="South" type="CollisionShape3D" parent="Boundaries"]
+position = Vector3(0, 3, 12)
+shape = SubResource("SideBoundary")
+[node name="North" type="CollisionShape3D" parent="Boundaries"]
+position = Vector3(0, 3, -26)
+shape = SubResource("SideBoundary")

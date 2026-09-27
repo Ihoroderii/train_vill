@@ -1,0 +1,313 @@
+{
+  "asset_count": 30,
+  "passed": true,
+  "checks": [
+    "GLB 2.0 structure",
+    "Scene, mesh and material presence",
+    "Finite position values",
+    "Nonzero dimensions"
+  ],
+  "total_export_triangles": 206410,
+  "assets": [
+    {
+      "number": 1,
+      "name": "Steam locomotive",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 23560,
+      "export_triangles": 16788,
+      "bytes": 679364
+    },
+    {
+      "number": 2,
+      "name": "Greenhouse carriage",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 43800,
+      "export_triangles": 27416,
+      "bytes": 1309932
+    },
+    {
+      "number": 3,
+      "name": "Kitchen carriage",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 35368,
+      "export_triangles": 25544,
+      "bytes": 1021780
+    },
+    {
+      "number": 4,
+      "name": "Workshop carriage",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 51892,
+      "export_triangles": 31464,
+      "bytes": 1463452
+    },
+    {
+      "number": 5,
+      "name": "Railway track",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 7704,
+      "export_triangles": 4572,
+      "bytes": 232980
+    },
+    {
+      "number": 6,
+      "name": "Station building",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 27154,
+      "export_triangles": 20164,
+      "bytes": 839176
+    },
+    {
+      "number": 7,
+      "name": "Stone bridge",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 31656,
+      "export_triangles": 15828,
+      "bytes": 877020
+    },
+    {
+      "number": 8,
+      "name": "Village cottage",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 16994,
+      "export_triangles": 12948,
+      "bytes": 530660
+    },
+    {
+      "number": 9,
+      "name": "Wooden fence",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 1176,
+      "export_triangles": 708,
+      "bytes": 37304
+    },
+    {
+      "number": 10,
+      "name": "Signboard",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 1144,
+      "export_triangles": 652,
+      "bytes": 35292
+    },
+    {
+      "number": 11,
+      "name": "Lamp post",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 1538,
+      "export_triangles": 1116,
+      "bytes": 48568
+    },
+    {
+      "number": 12,
+      "name": "Station bench",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 3240,
+      "export_triangles": 1620,
+      "bytes": 88684
+    },
+    {
+      "number": 13,
+      "name": "Station clock",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 2912,
+      "export_triangles": 1904,
+      "bytes": 88460
+    },
+    {
+      "number": 14,
+      "name": "Wooden crate",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 5960,
+      "export_triangles": 3140,
+      "bytes": 168524
+    },
+    {
+      "number": 15,
+      "name": "Barrel",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 856,
+      "export_triangles": 1200,
+      "bytes": 37984
+    },
+    {
+      "number": 16,
+      "name": "Wood stove",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 2284,
+      "export_triangles": 1948,
+      "bytes": 70068
+    },
+    {
+      "number": 17,
+      "name": "Dining table",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 2160,
+      "export_triangles": 1080,
+      "bytes": 59844
+    },
+    {
+      "number": 18,
+      "name": "Wooden chair",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 1944,
+      "export_triangles": 972,
+      "bytes": 53804
+    },
+    {
+      "number": 19,
+      "name": "Workbench",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 3096,
+      "export_triangles": 1644,
+      "bytes": 87532
+    },
+    {
+      "number": 20,
+      "name": "Tool rack",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 1576,
+      "export_triangles": 1800,
+      "bytes": 54604
+    },
+    {
+      "number": 21,
+      "name": "Cooking utensils",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 1200,
+      "export_triangles": 1992,
+      "bytes": 51084
+    },
+    {
+      "number": 22,
+      "name": "Bowls and plates",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 840,
+      "export_triangles": 1660,
+      "bytes": 28388
+    },
+    {
+      "number": 23,
+      "name": "Planter box",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 5616,
+      "export_triangles": 2808,
+      "bytes": 180244
+    },
+    {
+      "number": 24,
+      "name": "Flower pot",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 2232,
+      "export_triangles": 2632,
+      "bytes": 87484
+    },
+    {
+      "number": 25,
+      "name": "Vegetable crops",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 3960,
+      "export_triangles": 3192,
+      "bytes": 141776
+    },
+    {
+      "number": 26,
+      "name": "Pine tree",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 670,
+      "export_triangles": 376,
+      "bytes": 22156
+    },
+    {
+      "number": 27,
+      "name": "Leafy tree",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 7304,
+      "export_triangles": 4048,
+      "bytes": 204532
+    },
+    {
+      "number": 28,
+      "name": "Bushes and flowers",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 4328,
+      "export_triangles": 5720,
+      "bytes": 154376
+    },
+    {
+      "number": 29,
+      "name": "Boulders",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 522,
+      "export_triangles": 312,
+      "bytes": 17992
+    },
+    {
+      "number": 30,
+      "name": "River and waterfall",
+      "glb_valid": true,
+      "finite_positions": true,
+      "materials_present": true,
+      "export_vertices": 10938,
+      "export_triangles": 11162,
+      "bytes": 373916
+    }
+  ]
+}

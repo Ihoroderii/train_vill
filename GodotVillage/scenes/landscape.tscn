@@ -1,0 +1,229 @@
+[gd_scene load_steps=18 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/grove.tscn" id="Grove"]
+[ext_resource type="PackedScene" path="res://scenes/pine.tscn" id="Pine"]
+[ext_resource type="PackedScene" path="res://scenes/cottage.tscn" id="Cottage"]
+[ext_resource type="PackedScene" path="res://assets/models/07_stone_bridge.glb" id="Bridge"]
+[ext_resource type="PackedScene" path="res://assets/models/30_river_and_waterfall.glb" id="Waterfall"]
+[ext_resource type="PackedScene" path="res://scenes/boulders.tscn" id="Rocks"]
+[ext_resource type="PackedScene" path="res://scenes/leafy_tree.tscn" id="Tree"]
+[ext_resource type="PackedScene" path="res://assets/models/28_bushes_and_flowers.glb" id="Flowers"]
+[ext_resource type="PackedScene" path="res://scenes/fence.tscn" id="Fence"]
+[ext_resource type="PackedScene" path="res://assets/models/10_signboard.glb" id="Sign"]
+[ext_resource type="PackedScene" path="res://assets/models/23_planter_box.glb" id="Planter"]
+[ext_resource type="PackedScene" path="res://assets/models/25_vegetable_crops.glb" id="Crops"]
+[sub_resource type="BoxShape3D" id="BridgeDeck"]
+size = Vector3(6.3, 0.2, 1.8)
+[sub_resource type="BoxShape3D" id="BridgeWall"]
+size = Vector3(6.3, 0.65, 0.25)
+[sub_resource type="BoxShape3D" id="FenceShape"]
+size = Vector3(9.2, 1.2, 0.18)
+[sub_resource type="CylinderShape3D" id="Trunk"]
+height = 2.0
+radius = 0.2
+[sub_resource type="BoxShape3D" id="CliffCollision"]
+size = Vector3(3.8, 3.8, 3.0)
+
+[node name="Landscape" type="Node3D"]
+
+[node name="RiverBridge" type="StaticBody3D" parent="."]
+position = Vector3(-9, -1.96, -12)
+[node name="Model" parent="RiverBridge" instance=ExtResource("Bridge")]
+scale = Vector3(1.17, 1, 1.2)
+[node name="WalkableDeck" type="CollisionShape3D" parent="RiverBridge"]
+position = Vector3(0, 1.94, 0)
+shape = SubResource("BridgeDeck")
+[node name="NorthParapet" type="CollisionShape3D" parent="RiverBridge"]
+position = Vector3(0, 2.22, -0.92)
+shape = SubResource("BridgeWall")
+[node name="SouthParapet" type="CollisionShape3D" parent="RiverBridge"]
+position = Vector3(0, 2.22, 0.92)
+shape = SubResource("BridgeWall")
+
+[node name="Waterfall" parent="." instance=ExtResource("Waterfall")]
+position = Vector3(-9, -1.94, -20)
+scale = Vector3(1.45, 2.25, 1.7)
+
+[node name="RiverBanks" type="Node3D" parent="."]
+[node name="WestCliff01" parent="RiverBanks" instance=ExtResource("Rocks")]
+position = Vector3(-12.8, -1.6, -7.2)
+rotation = Vector3(0, 0.4, 0)
+scale = Vector3(2.2, 2.3, 2.2)
+[node name="WestCliff02" parent="RiverBanks" instance=ExtResource("Rocks")]
+position = Vector3(-12.9, -1.8, -10)
+rotation = Vector3(0, -0.8, 0)
+scale = Vector3(1.7, 2.1, 2.2)
+[node name="WestCliff03" parent="RiverBanks" instance=ExtResource("Rocks")]
+position = Vector3(-12.9, -1.7, -15)
+rotation = Vector3(0, 1.1, 0)
+scale = Vector3(2.6, 2.8, 2.4)
+[node name="WestCliff04" parent="RiverBanks" instance=ExtResource("Rocks")]
+position = Vector3(-13, -1.8, -18.5)
+rotation = Vector3(0, 0.5, 0)
+scale = Vector3(2.3, 3.4, 2.4)
+[node name="EastCliff01" parent="RiverBanks" instance=ExtResource("Rocks")]
+position = Vector3(-5.6, -1.8, -6.8)
+rotation = Vector3(0, 2.0, 0)
+scale = Vector3(1.8, 2.1, 1.9)
+[node name="EastCliff02" parent="RiverBanks" instance=ExtResource("Rocks")]
+position = Vector3(-5.5, -1.8, -9)
+scale = Vector3(1.7, 2, 2)
+[node name="EastCliff03" parent="RiverBanks" instance=ExtResource("Rocks")]
+position = Vector3(-5.5, -1.8, -15)
+rotation = Vector3(0, 2.4, 0)
+scale = Vector3(2.1, 2.5, 2.1)
+[node name="EastCliff04" parent="RiverBanks" instance=ExtResource("Rocks")]
+position = Vector3(-5.8, -1.8, -18.5)
+rotation = Vector3(0, 1.4, 0)
+scale = Vector3(2.0, 2.8, 2.5)
+[node name="FallBackdrop" parent="RiverBanks" instance=ExtResource("Rocks")]
+position = Vector3(-8.3, -0.5, -24)
+scale = Vector3(4.0, 4.2, 3.0)
+
+[node name="Village" type="Node3D" parent="."]
+[node name="Cottage01" parent="Village" instance=ExtResource("Cottage")]
+position = Vector3(-1.6, 0, -14.6)
+rotation = Vector3(0, 0.12, 0)
+scale = Vector3(1.2, 1.2, 1.2)
+[node name="Cottage02" parent="Village" instance=ExtResource("Cottage")]
+position = Vector3(3, 0, -16)
+rotation = Vector3(0, -0.2, 0)
+scale = Vector3(1.1, 1.1, 1.1)
+[node name="Cottage03" parent="Village" instance=ExtResource("Cottage")]
+position = Vector3(7.5, 0, -14.7)
+rotation = Vector3(0, 0.25, 0)
+[node name="WestCottage01" parent="Village" instance=ExtResource("Cottage")]
+position = Vector3(-17, 0, -8)
+rotation = Vector3(0, -0.25, 0)
+scale = Vector3(0.95, 0.95, 0.95)
+[node name="WestCottage02" parent="Village" instance=ExtResource("Cottage")]
+position = Vector3(-16.4, 0, -13.8)
+rotation = Vector3(0, -0.1, 0)
+[node name="VegetableBed01" parent="Village" instance=ExtResource("Planter")]
+position = Vector3(-3.9, 0, -14.3)
+rotation = Vector3(0, 1.5708, 0)
+[node name="VegetableBed02" parent="Village" instance=ExtResource("Crops")]
+position = Vector3(-3.9, 0, -16.4)
+[node name="VillageFence01" parent="Village" instance=ExtResource("Fence")]
+position = Vector3(1.1, 0, -13)
+[node name="VillageFence02" parent="Village" instance=ExtResource("Fence")]
+position = Vector3(3.4, 0, -13)
+[node name="VillageFlowers01" parent="Village" instance=ExtResource("Flowers")]
+position = Vector3(0.7, 0, -13.6)
+[node name="VillageFlowers02" parent="Village" instance=ExtResource("Flowers")]
+position = Vector3(6.2, 0, -13)
+
+[node name="Woodland" type="Node3D" parent="."]
+[node name="WestWood01" parent="Woodland" instance=ExtResource("Grove")]
+position = Vector3(-20, 0, -3)
+[node name="WestWood02" parent="Woodland" instance=ExtResource("Grove")]
+position = Vector3(-17, 0.2, -20)
+rotation = Vector3(0, 0.6, 0)
+scale = Vector3(1.2, 1.3, 1.2)
+[node name="EastWood01" parent="Woodland" instance=ExtResource("Grove")]
+position = Vector3(16, 0, -4)
+rotation = Vector3(0, 0.7, 0)
+[node name="EastWood02" parent="Woodland" instance=ExtResource("Grove")]
+position = Vector3(16.2, 0.3, -12)
+rotation = Vector3(0, -0.5, 0)
+scale = Vector3(1.3, 1.5, 1.3)
+[node name="FarWood01" parent="Woodland" instance=ExtResource("Grove")]
+position = Vector3(-3, 0.5, -22)
+scale = Vector3(1.4, 1.7, 1.4)
+[node name="FarWood02" parent="Woodland" instance=ExtResource("Grove")]
+position = Vector3(6, 1.2, -23)
+rotation = Vector3(0, 0.9, 0)
+scale = Vector3(1.4, 1.7, 1.4)
+[node name="FarWood03" parent="Woodland" instance=ExtResource("Grove")]
+position = Vector3(13, 0.5, -23)
+scale = Vector3(1.6, 1.9, 1.6)
+[node name="WestPine01" parent="Woodland" instance=ExtResource("Pine")]
+position = Vector3(-13.3, 0, -4)
+scale = Vector3(1.3, 1.5, 1.3)
+[node name="WestPine02" parent="Woodland" instance=ExtResource("Pine")]
+position = Vector3(-14.2, 0, -15)
+scale = Vector3(1.1, 1.5, 1.1)
+[node name="BankPine01" parent="Woodland" instance=ExtResource("Pine")]
+position = Vector3(-4.1, 0, -7.7)
+scale = Vector3(1.3, 1.55, 1.3)
+[node name="BankPine02" parent="Woodland" instance=ExtResource("Pine")]
+position = Vector3(-3.7, 0, -5.8)
+scale = Vector3(1.1, 1.15, 1.1)
+[node name="StationTree" type="StaticBody3D" parent="Woodland"]
+position = Vector3(1, 0, -7.8)
+[node name="Model" parent="Woodland/StationTree" instance=ExtResource("Tree")]
+scale = Vector3(1.9, 1.9, 1.9)
+[node name="Trunk" type="CollisionShape3D" parent="Woodland/StationTree"]
+position = Vector3(0, 1, 0)
+shape = SubResource("Trunk")
+[node name="StationTree02" parent="Woodland" instance=ExtResource("Tree")]
+position = Vector3(9.5, 0, -8)
+scale = Vector3(1.4, 1.6, 1.4)
+[node name="VillageTree" parent="Woodland" instance=ExtResource("Tree")]
+position = Vector3(4.9, 0, -18.5)
+scale = Vector3(1.7, 1.8, 1.7)
+
+[node name="Foreground" type="Node3D" parent="."]
+[node name="LeftPine" parent="Foreground" instance=ExtResource("Pine")]
+position = Vector3(-12, 0, 8)
+scale = Vector3(1.8, 2.2, 1.8)
+[node name="LeftPineSmall" parent="Foreground" instance=ExtResource("Pine")]
+position = Vector3(-14.5, 0, 5.7)
+scale = Vector3(1.2, 1.5, 1.2)
+[node name="RightPine" parent="Foreground" instance=ExtResource("Pine")]
+position = Vector3(13, 0, 7)
+scale = Vector3(1.9, 2.3, 1.9)
+[node name="RightPineSmall" parent="Foreground" instance=ExtResource("Pine")]
+position = Vector3(15.5, 0, 5.1)
+scale = Vector3(1.2, 1.7, 1.2)
+[node name="Flower01" parent="Foreground" instance=ExtResource("Flowers")]
+position = Vector3(-8, 0, 5.5)
+scale = Vector3(1.5, 1.4, 1.5)
+[node name="Flower02" parent="Foreground" instance=ExtResource("Flowers")]
+position = Vector3(-5.8, 0, 6)
+scale = Vector3(1.2, 1.1, 1.2)
+[node name="Flower03" parent="Foreground" instance=ExtResource("Flowers")]
+position = Vector3(0.2, 0, 5.7)
+[node name="Flower04" parent="Foreground" instance=ExtResource("Flowers")]
+position = Vector3(6.5, 0, 5.5)
+scale = Vector3(1.7, 1.5, 1.7)
+[node name="Flower05" parent="Foreground" instance=ExtResource("Flowers")]
+position = Vector3(9, 0, 6.2)
+scale = Vector3(1.2, 1.2, 1.2)
+[node name="Flower06" parent="Foreground" instance=ExtResource("Flowers")]
+position = Vector3(-11, 0, 1.7)
+[node name="Flower07" parent="Foreground" instance=ExtResource("Flowers")]
+position = Vector3(11, 0, 1.7)
+scale = Vector3(1.5, 1.2, 1.5)
+[node name="Rock01" parent="Foreground" instance=ExtResource("Rocks")]
+position = Vector3(-2.9, -0.1, 6)
+scale = Vector3(0.9, 0.7, 0.9)
+[node name="Rock02" parent="Foreground" instance=ExtResource("Rocks")]
+position = Vector3(10.2, -0.15, 5.1)
+scale = Vector3(1.2, 0.85, 1.2)
+[node name="Rock03" parent="Foreground" instance=ExtResource("Rocks")]
+position = Vector3(-12, -0.15, 3.6)
+
+[node name="MeadowFence" type="StaticBody3D" parent="."]
+[node name="Collision" type="CollisionShape3D" parent="MeadowFence"]
+position = Vector3(-6, 0.6, 7.2)
+shape = SubResource("FenceShape")
+[node name="Fence01" parent="MeadowFence" instance=ExtResource("Fence")]
+position = Vector3(-9.45, 0, 7.2)
+[node name="Fence02" parent="MeadowFence" instance=ExtResource("Fence")]
+position = Vector3(-7.15, 0, 7.2)
+[node name="Fence03" parent="MeadowFence" instance=ExtResource("Fence")]
+position = Vector3(-4.85, 0, 7.2)
+[node name="Fence04" parent="MeadowFence" instance=ExtResource("Fence")]
+position = Vector3(-2.55, 0, 7.2)
+
+[node name="MeadowSign" parent="." instance=ExtResource("Sign")]
+position = Vector3(-8.7, 0, 8.1)
+rotation = Vector3(0, -0.15, 0)
+[node name="Text" type="Label3D" parent="MeadowSign"]
+position = Vector3(0, 1.18, 0.105)
+text = "BRIGHTER\nDAYS AHEAD"
+font_size = 40
+pixel_size = 0.0025
+modulate = Color(1, 0.92, 0.71, 1)
+outline_size = 0

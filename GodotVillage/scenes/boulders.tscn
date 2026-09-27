@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3]
+[ext_resource type="PackedScene" path="res://assets/models/29_boulders.glb" id="Model"]
+[sub_resource type="SphereShape3D" id="Large"]
+radius = 0.62
+[sub_resource type="SphereShape3D" id="Medium"]
+radius = 0.39
+[sub_resource type="SphereShape3D" id="Small"]
+radius = 0.22
+[node name="Boulders" type="StaticBody3D"]
+[node name="Model" parent="." instance=ExtResource("Model")]
+[node name="Large" type="CollisionShape3D" parent="."]
+position = Vector3(-0.3, 0.64, 0)
+shape = SubResource("Large")
+[node name="Medium" type="CollisionShape3D" parent="."]
+position = Vector3(0.53, 0.38, 0)
+shape = SubResource("Medium")
+[node name="Small" type="CollisionShape3D" parent="."]
+position = Vector3(0.03, 0.2, 0.42)
+shape = SubResource("Small")

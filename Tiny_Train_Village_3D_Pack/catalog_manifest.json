@@ -1,0 +1,458 @@
+{
+  "generator": "Blender 4.5.3 LTS",
+  "units": "meters",
+  "source": "Selected Tiny Train Village object catalog",
+  "asset_count": 30,
+  "assets": [
+    {
+      "number": 1,
+      "name": "Steam locomotive",
+      "slug": "01_steam_locomotive",
+      "category": "Train",
+      "file": "models/01_steam_locomotive.glb",
+      "dimensions_m": [
+        4.175,
+        1.87,
+        2.53
+      ],
+      "mesh_parts": 143,
+      "base_vertices": 4240,
+      "has_materials": true
+    },
+    {
+      "number": 2,
+      "name": "Greenhouse carriage",
+      "slug": "02_greenhouse_carriage",
+      "category": "Train",
+      "file": "models/02_greenhouse_carriage.glb",
+      "dimensions_m": [
+        4.09,
+        1.6375,
+        2.175
+      ],
+      "mesh_parts": 353,
+      "base_vertices": 6991,
+      "has_materials": true
+    },
+    {
+      "number": 3,
+      "name": "Kitchen carriage",
+      "slug": "03_kitchen_carriage",
+      "category": "Train",
+      "file": "models/03_kitchen_carriage.glb",
+      "dimensions_m": [
+        4.09,
+        1.6375,
+        2.015
+      ],
+      "mesh_parts": 225,
+      "base_vertices": 6938,
+      "has_materials": true
+    },
+    {
+      "number": 4,
+      "name": "Workshop carriage",
+      "slug": "04_workshop_carriage",
+      "category": "Train",
+      "file": "models/04_workshop_carriage.glb",
+      "dimensions_m": [
+        4.09,
+        1.6375,
+        1.93
+      ],
+      "mesh_parts": 298,
+      "base_vertices": 6108,
+      "has_materials": true
+    },
+    {
+      "number": 5,
+      "name": "Railway track",
+      "slug": "05_railway_track",
+      "category": "Train",
+      "file": "models/05_railway_track.glb",
+      "dimensions_m": [
+        3.9,
+        1.85,
+        0.45
+      ],
+      "mesh_parts": 69,
+      "base_vertices": 840,
+      "has_materials": true
+    },
+    {
+      "number": 6,
+      "name": "Station building",
+      "slug": "06_station_building",
+      "category": "Buildings",
+      "file": "models/06_station_building.glb",
+      "dimensions_m": [
+        3.68,
+        3.18,
+        3.425
+      ],
+      "mesh_parts": 272,
+      "base_vertices": 4612,
+      "has_materials": true
+    },
+    {
+      "number": 7,
+      "name": "Stone bridge",
+      "slug": "07_stone_bridge",
+      "category": "Buildings",
+      "file": "models/07_stone_bridge.glb",
+      "dimensions_m": [
+        5.44,
+        1.82,
+        2.495
+      ],
+      "mesh_parts": 175,
+      "base_vertices": 1400,
+      "has_materials": true
+    },
+    {
+      "number": 8,
+      "name": "Village cottage",
+      "slug": "08_village_cottage",
+      "category": "Buildings",
+      "file": "models/08_village_cottage.glb",
+      "dimensions_m": [
+        2.43,
+        2.7234,
+        3.125
+      ],
+      "mesh_parts": 184,
+      "base_vertices": 2944,
+      "has_materials": true
+    },
+    {
+      "number": 9,
+      "name": "Wooden fence",
+      "slug": "09_wooden_fence",
+      "category": "Outdoor props",
+      "file": "models/09_wooden_fence.glb",
+      "dimensions_m": [
+        2.39,
+        0.186,
+        1.18
+      ],
+      "mesh_parts": 11,
+      "base_vertices": 136,
+      "has_materials": true
+    },
+    {
+      "number": 10,
+      "name": "Signboard",
+      "slug": "10_signboard",
+      "category": "Outdoor props",
+      "file": "models/10_signboard.glb",
+      "dimensions_m": [
+        1.7,
+        0.176,
+        1.6
+      ],
+      "mesh_parts": 9,
+      "base_vertices": 104,
+      "has_materials": true
+    },
+    {
+      "number": 11,
+      "name": "Lamp post",
+      "slug": "11_lamp_post",
+      "category": "Outdoor props",
+      "file": "models/11_lamp_post.glb",
+      "dimensions_m": [
+        0.97,
+        0.54,
+        2.7932
+      ],
+      "mesh_parts": 10,
+      "base_vertices": 290,
+      "has_materials": true
+    },
+    {
+      "number": 12,
+      "name": "Station bench",
+      "slug": "12_station_bench",
+      "category": "Outdoor props",
+      "file": "models/12_station_bench.glb",
+      "dimensions_m": [
+        1.6,
+        0.5898,
+        1.0534
+      ],
+      "mesh_parts": 15,
+      "base_vertices": 120,
+      "has_materials": true
+    },
+    {
+      "number": 13,
+      "name": "Station clock",
+      "slug": "13_station_clock",
+      "category": "Outdoor props",
+      "file": "models/13_station_clock.glb",
+      "dimensions_m": [
+        1.165,
+        0.306,
+        1.14
+      ],
+      "mesh_parts": 20,
+      "base_vertices": 416,
+      "has_materials": true
+    },
+    {
+      "number": 14,
+      "name": "Wooden crate",
+      "slug": "14_wooden_crate",
+      "category": "Storage",
+      "file": "models/14_wooden_crate.glb",
+      "dimensions_m": [
+        0.9135,
+        1.0395,
+        0.9225
+      ],
+      "mesh_parts": 35,
+      "base_vertices": 344,
+      "has_materials": true
+    },
+    {
+      "number": 15,
+      "name": "Barrel",
+      "slug": "15_barrel",
+      "category": "Storage",
+      "file": "models/15_barrel.glb",
+      "dimensions_m": [
+        0.8508,
+        0.8508,
+        1.052
+      ],
+      "mesh_parts": 24,
+      "base_vertices": 712,
+      "has_materials": true
+    },
+    {
+      "number": 16,
+      "name": "Wood stove",
+      "slug": "16_wood_stove",
+      "category": "Kitchen props",
+      "file": "models/16_wood_stove.glb",
+      "dimensions_m": [
+        0.77,
+        0.7,
+        1.6225
+      ],
+      "mesh_parts": 15,
+      "base_vertices": 620,
+      "has_materials": true
+    },
+    {
+      "number": 17,
+      "name": "Dining table",
+      "slug": "17_dining_table",
+      "category": "Furniture",
+      "file": "models/17_dining_table.glb",
+      "dimensions_m": [
+        1.45,
+        0.79,
+        0.93
+      ],
+      "mesh_parts": 10,
+      "base_vertices": 80,
+      "has_materials": true
+    },
+    {
+      "number": 18,
+      "name": "Wooden chair",
+      "slug": "18_wooden_chair",
+      "category": "Furniture",
+      "file": "models/18_wooden_chair.glb",
+      "dimensions_m": [
+        0.55,
+        0.55,
+        1.07
+      ],
+      "mesh_parts": 9,
+      "base_vertices": 72,
+      "has_materials": true
+    },
+    {
+      "number": 19,
+      "name": "Workbench",
+      "slug": "19_workbench",
+      "category": "Workshop props",
+      "file": "models/19_workbench.glb",
+      "dimensions_m": [
+        1.5,
+        0.8974,
+        0.965
+      ],
+      "mesh_parts": 17,
+      "base_vertices": 184,
+      "has_materials": true
+    },
+    {
+      "number": 20,
+      "name": "Tool rack",
+      "slug": "20_tool_rack",
+      "category": "Workshop props",
+      "file": "models/20_tool_rack.glb",
+      "dimensions_m": [
+        1.5,
+        0.195,
+        0.742
+      ],
+      "mesh_parts": 18,
+      "base_vertices": 744,
+      "has_materials": true
+    },
+    {
+      "number": 21,
+      "name": "Cooking utensils",
+      "slug": "21_cooking_utensils",
+      "category": "Kitchen props",
+      "file": "models/21_cooking_utensils.glb",
+      "dimensions_m": [
+        1.4,
+        0.19,
+        1.1
+      ],
+      "mesh_parts": 22,
+      "base_vertices": 992,
+      "has_materials": true
+    },
+    {
+      "number": 22,
+      "name": "Bowls and plates",
+      "slug": "22_bowls_and_plates",
+      "category": "Kitchen props",
+      "file": "models/22_bowls_and_plates.glb",
+      "dimensions_m": [
+        1.615,
+        1.734,
+        0.3101
+      ],
+      "mesh_parts": 5,
+      "base_vertices": 840,
+      "has_materials": true
+    },
+    {
+      "number": 23,
+      "name": "Planter box",
+      "slug": "23_planter_box",
+      "category": "Garden",
+      "file": "models/23_planter_box.glb",
+      "dimensions_m": [
+        1.505,
+        0.716,
+        0.7026
+      ],
+      "mesh_parts": 66,
+      "base_vertices": 584,
+      "has_materials": true
+    },
+    {
+      "number": 24,
+      "name": "Flower pot",
+      "slug": "24_flower_pot",
+      "category": "Garden",
+      "file": "models/24_flower_pot.glb",
+      "dimensions_m": [
+        0.6784,
+        0.6784,
+        0.9227
+      ],
+      "mesh_parts": 44,
+      "base_vertices": 1278,
+      "has_materials": true
+    },
+    {
+      "number": 25,
+      "name": "Vegetable crops",
+      "slug": "25_vegetable_crops",
+      "category": "Garden",
+      "file": "models/25_vegetable_crops.glb",
+      "dimensions_m": [
+        1.2,
+        1.1,
+        0.388
+      ],
+      "mesh_parts": 67,
+      "base_vertices": 1367,
+      "has_materials": true
+    },
+    {
+      "number": 26,
+      "name": "Pine tree",
+      "slug": "26_pine_tree",
+      "category": "Landscape",
+      "file": "models/26_pine_tree.glb",
+      "dimensions_m": [
+        1.4,
+        1.3315,
+        2.71
+      ],
+      "mesh_parts": 6,
+      "base_vertices": 220,
+      "has_materials": true
+    },
+    {
+      "number": 27,
+      "name": "Leafy tree",
+      "slug": "27_leafy_tree",
+      "category": "Landscape",
+      "file": "models/27_leafy_tree.glb",
+      "dimensions_m": [
+        1.906,
+        1.7657,
+        2.6548
+      ],
+      "mesh_parts": 36,
+      "base_vertices": 2096,
+      "has_materials": true
+    },
+    {
+      "number": 28,
+      "name": "Bushes and flowers",
+      "slug": "28_bushes_and_flowers",
+      "category": "Landscape",
+      "file": "models/28_bushes_and_flowers.glb",
+      "dimensions_m": [
+        1.1512,
+        1.1132,
+        0.5919
+      ],
+      "mesh_parts": 70,
+      "base_vertices": 2944,
+      "has_materials": true
+    },
+    {
+      "number": 29,
+      "name": "Boulders",
+      "slug": "29_boulders",
+      "category": "Landscape",
+      "file": "models/29_boulders.glb",
+      "dimensions_m": [
+        1.724,
+        1.2184,
+        1.3935
+      ],
+      "mesh_parts": 3,
+      "base_vertices": 162,
+      "has_materials": true
+    },
+    {
+      "number": 30,
+      "name": "River and waterfall",
+      "slug": "30_river_and_waterfall",
+      "category": "Landscape",
+      "file": "models/30_river_and_waterfall.glb",
+      "dimensions_m": [
+        4.1218,
+        3.8,
+        2.2392
+      ],
+      "mesh_parts": 131,
+      "base_vertices": 5690,
+      "has_materials": true
+    }
+  ]
+}

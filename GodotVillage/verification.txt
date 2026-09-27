@@ -1,0 +1,14 @@
+Godot 4.6 — runtime verification
+PASS: Capsule settles onto the meadow
+PASS: Overview is the initial camera
+PASS: Exploration camera switch
+PASS: WASD walking moves the capsule
+PASS: Shift running is faster than walking
+PASS: Space jumps
+PASS: Capsule lands after jumping
+PASS: Carriage collision blocks walking through the train
+PASS: Station walls block the capsule
+PASS: Station steps can be walked up
+PASS: Bridge is walkable from bank to bank
+PASS: Falling out of bounds resets to spawn
+PASS: Return to village overview

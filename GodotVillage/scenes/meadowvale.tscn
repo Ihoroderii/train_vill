@@ -1,0 +1,171 @@
+[gd_scene format=3 uid="uid://blfol8osrunal"]
+
+[ext_resource type="PackedScene" path="res://scenes/landscape.tscn" id="Landscape"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="Player"]
+[ext_resource type="PackedScene" path="res://scenes/railway.tscn" id="Railway"]
+[ext_resource type="PackedScene" path="res://scenes/station.tscn" id="Station"]
+[ext_resource type="PackedScene" path="res://scenes/terrain.tscn" id="Terrain"]
+
+[sub_resource type="ProceduralSkyMaterial" id="SkyMaterial"]
+sky_top_color = Color(0.31, 0.53, 0.66, 1)
+sky_horizon_color = Color(0.77, 0.83, 0.79, 1)
+ground_bottom_color = Color(0.32, 0.38, 0.28, 1)
+ground_horizon_color = Color(0.77, 0.83, 0.79, 1)
+sun_angle_max = 5.0
+
+[sub_resource type="Sky" id="Sky"]
+sky_material = SubResource("SkyMaterial")
+
+[sub_resource type="Environment" id="Environment"]
+background_mode = 2
+sky = SubResource("Sky")
+ambient_light_source = 3
+ambient_light_color = Color(0.76, 0.83, 0.89, 1)
+ambient_light_energy = 0.32
+reflected_light_source = 2
+fog_enabled = true
+fog_light_color = Color(0.69, 0.77, 0.75, 1)
+fog_light_energy = 0.7
+fog_density = 0.0025
+
+[sub_resource type="Theme" id="Theme"]
+default_font_size = 17
+Label/colors/font_color = Color(0.97, 0.92, 0.8, 1)
+
+[sub_resource type="StyleBoxFlat" id="TitleStyle"]
+bg_color = Color(0.1, 0.16, 0.13, 0.86)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.85, 0.78, 0.59, 0.5)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[sub_resource type="StyleBoxFlat" id="BadgeStyle"]
+bg_color = Color(0.96, 0.9, 0.75, 0.95)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="BottomStyle"]
+bg_color = Color(0.1, 0.16, 0.13, 0.91)
+border_width_top = 1
+border_color = Color(0.85, 0.78, 0.59, 0.6)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+
+[node name="Meadowvale" type="Node3D" unique_id=292821303]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1005808983]
+environment = SubResource("Environment")
+
+[node name="MorningSun" type="DirectionalLight3D" parent="." unique_id=1496183840]
+transform = Transform3D(0.81390315, 0.48728287, -0.31641275, -0.09862665, 0.6525722, 0.7512804, 0.5725683, -0.5802627, 0.57918966, 0, 0, 0)
+light_color = Color(1, 0.89, 0.69, 1)
+light_energy = 0.65
+shadow_enabled = true
+shadow_bias = 0.035
+directional_shadow_max_distance = 90.0
+
+[node name="Terrain" parent="." unique_id=635478399 instance=ExtResource("Terrain")]
+
+[node name="Railway" parent="." unique_id=1571763287 instance=ExtResource("Railway")]
+
+[node name="Station" parent="." unique_id=1777823674 instance=ExtResource("Station")]
+
+[node name="Landscape" parent="." unique_id=1732212258 instance=ExtResource("Landscape")]
+
+[node name="OverviewCamera" type="Camera3D" parent="." unique_id=269610738]
+transform = Transform3D(0.9444103, 0.12651308, -0.30345282, 0, 0.9229966, 0.3848082, 0.32876918, -0.36341685, 0.8716875, -8, 11, 22)
+current = true
+fov = 34.0
+near = 0.1
+far = 200.0
+
+[node name="Player" parent="." unique_id=2077908978 instance=ExtResource("Player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.15, 3.6)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=2020625703]
+
+[node name="TitlePanel" type="PanelContainer" parent="HUD" unique_id=21117995]
+offset_left = 28.0
+offset_top = 26.0
+offset_right = 442.0
+offset_bottom = 136.0
+mouse_filter = 2
+theme = SubResource("Theme")
+theme_override_styles/panel = SubResource("TitleStyle")
+
+[node name="Margin" type="MarginContainer" parent="HUD/TitlePanel" unique_id=1780975405]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 23
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 23
+theme_override_constants/margin_bottom = 15
+
+[node name="Column" type="VBoxContainer" parent="HUD/TitlePanel/Margin" unique_id=1256005214]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 4
+
+[node name="Title" type="Label" parent="HUD/TitlePanel/Margin/Column" unique_id=609317336]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "TINY TRAIN VILLAGE"
+
+[node name="Mode" type="Label" parent="HUD/TitlePanel/Margin/Column" unique_id=610304273]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.78, 0.81, 0.61, 1)
+theme_override_font_sizes/font_size = 13
+text = "MEADOWVALE  /  THE MORNING EXPRESS"
+
+[node name="MorningBadge" type="PanelContainer" parent="HUD" unique_id=2002012283]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -223.0
+offset_top = 28.0
+offset_right = -28.0
+offset_bottom = 78.0
+grow_horizontal = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("BadgeStyle")
+
+[node name="Label" type="Label" parent="HUD/MorningBadge" unique_id=10518206]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.24, 0.3, 0.2, 1)
+theme_override_font_sizes/font_size = 15
+text = "☀  A QUIET MORNING"
+horizontal_alignment = 1
+
+[node name="BottomBar" type="PanelContainer" parent="HUD" unique_id=4523356]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -650.0
+offset_top = -63.0
+offset_right = 650.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme = SubResource("Theme")
+theme_override_styles/panel = SubResource("BottomStyle")
+
+[node name="Margin" type="MarginContainer" parent="HUD/BottomBar" unique_id=1561881354]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="Controls" type="Label" parent="HUD/BottomBar/Margin" unique_id=1159557388]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "ENTER  Explore the village     •     Walk as the capsule     •     TAB  Switch views"
+horizontal_alignment = 1

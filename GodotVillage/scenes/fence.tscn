@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="PackedScene" path="res://assets/models/09_wooden_fence.glb" id="Model"]
+[sub_resource type="BoxShape3D" id="Fence"]
+size = Vector3(2.39, 1.18, 0.186)
+[node name="Fence" type="StaticBody3D"]
+[node name="Model" parent="." instance=ExtResource("Model")]
+[node name="Collision" type="CollisionShape3D" parent="."]
+position = Vector3(0, 0.59, 0)
+shape = SubResource("Fence")
